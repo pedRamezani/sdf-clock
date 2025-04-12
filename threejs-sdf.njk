@@ -1,0 +1,42 @@
+---
+layout: posts.njk
+default_header: false
+default_footer: false
+title: SDF
+description: A simple threejs SDF test
+post_header: false
+post_description: This is a simple SDF model implemented in Three.js
+scroll_button: false
+date: 2024-11-23
+mjs:
+    - sdf.js
+type:
+    - tool
+draft: true
+---
+{# Implement header: false footer: false #}
+<div class="w-full relative">
+    <div class="card bg-neutral text-neutral-content w-96 shadow-xl absolute top-4 start-4">
+        <div class="card-body">
+            <h1 class="card-title">{{ title }}</h1>
+            <p>{{ post_description }}</p>
+        </div>
+    </div>
+    <canvas id="sdf"></canvas>
+    <div class="card card-compact bg-neutral text-neutral-content shadow-xl absolute bottom-4 start-4">
+        <div class="card-body">
+            <a href="/">
+                {% include "partials/header/_logo.njk" %}
+            </a>
+        </div>
+    </div>
+</div>
+<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.159.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.159.0/examples/jsm/"
+        }
+    }
+</script>
